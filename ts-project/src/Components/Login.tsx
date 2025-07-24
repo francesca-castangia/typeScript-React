@@ -1,17 +1,29 @@
 import { useState } from "react";
+<<<<<<< HEAD
 import { useUser } from "../contexts/userContext"; 
 import { useNavigate } from "react-router-dom";
 
 
 function Login() {
   const { login, message } = useUser();
+=======
+import {useUser} from "../Context/userContext.tsx"
+import { useNavigate } from "react-router-dom";
+
+function Login() {
+  const { login, message} = useUser();
+>>>>>>> ab12aca160b55779d7b7f5e6b5cb35349ff7ff61
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [remember, setRemember] = useState(false);
   const navigate= useNavigate();
 
 
+<<<<<<< HEAD
   const handleSubmit = (e) => {
+=======
+  const handleSubmit = (e: any) => {
+>>>>>>> ab12aca160b55779d7b7f5e6b5cb35349ff7ff61
     e.preventDefault();
     login(username, password);
     setUsername("");

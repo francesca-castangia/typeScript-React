@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import React, { useState} from "react";
+=======
+import React, { useState, useEffect } from "react";
+>>>>>>> ab12aca160b55779d7b7f5e6b5cb35349ff7ff61
 import { useUser } from "../contexts/userContext";
 
 function Registrazione() {
