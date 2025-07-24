@@ -3,7 +3,7 @@ import {useUser} from "../Context/userContext.tsx"
 import { useNavigate } from "react-router-dom";
 
 function Login() {
-  const { login, message}: any = useUser();
+  const { login, message} = useUser();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [remember, setRemember] = useState(false);

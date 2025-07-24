@@ -1,10 +1,26 @@
 import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
 
-const UserContext: React.Context<unknown> = createContext<unknown>(undefined)
+interface UserContextType {
+  user: User | null;
+  db: User[];
+  message: string;
+  registrazione: (formData: User) => void;
+  login: (username: string, password: string) => void;
+  logout: () => void;
+  editUser: (editUser: User) => void;
+}
+
+const UserContext = createContext<UserContextType | undefined>(undefined);
 
 
 // hook personalizzato che usa il contesto, così da non dover importare il contesto in ogni file.
-export const useUser = () => useContext(UserContext);
+export const useUser = () => {
+  const context = useContext(UserContext);
+  if (!context) {
+    throw new Error("useUser deve essere usato dentro <UserProvider>");
+  }
+  return context;
+};
 
 type User = {
 username: string;
